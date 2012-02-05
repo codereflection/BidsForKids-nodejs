@@ -1,0 +1,23 @@
+h1= title
+p Editing Procurement Details for '#{procurement.donation}'
+
+a(href="/procurements") Back to list
+
+form(method="post")
+    fieldset
+        legend Procurement Details
+        div
+            label(for="donation") Donation:
+                input(type="text", name="donation", value=procurement.donation)
+            label(for="description") Description:
+                textarea(cols=50, rows=3, name="description")= procurement.description
+            label(for="estimatedValue") Estimated Value:
+                input(type="text", name="estimatedValue", value=procurement.estimatedValue)
+            label(for="donor") Donor:
+                input(type="text", name="donor", value=procurement.donor)
+            label(for="procurer") Procurer:
+                input(type="text", name="procurer", value=procurement.procurer)
+            label(for="notes") Notes:
+                textarea(name="notes", cols=50, rows=4)= procurement.notes
+    p.buttons
+        input(type="submit", value="Save")

@@ -1,0 +1,22 @@
+h1= title
+p Procurements
+
+table
+    thead
+        tr
+            td Id
+            td Donation
+            td Procurer
+            td Est Value
+            td Action
+    tbody
+        each p in procurements
+            tr
+                td= p.id
+                td= p.donation
+                td= p.procurer
+                td= p.estimatedValue
+                td
+                    a(href="procurement/" + p.id + "/view") View
+                    a(href="procurement/" + p.id + "/edit") Edit
+   
