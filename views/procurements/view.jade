@@ -1,0 +1,18 @@
+h1= title
+p Viewing Procurement Details for '#{procurement.donation}'
+
+fieldset
+    legend Procurement Details
+    div
+        label(for="procurement[donation]") Donation:
+            div#donation= procurement.donation
+        label(for="procurement[description]") Description:
+            div#description= procurement.description
+        label(for="procurement[estimatedValue]") Estimated Value:
+            div#estimatedValue= procurement.estimatedValue
+        label(for="procurement[donor]") Donor:
+            div#donor= procurement.donor
+        label(for="procurement[procurer]") Procurer:
+            div#procurer= procurement.procurer
+        label(for="procurement[notes]") Notes:
+            div#notes= procurement.notes
