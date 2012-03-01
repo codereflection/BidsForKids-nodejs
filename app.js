@@ -38,6 +38,7 @@ app.get('/procurements', procurements.index);
 app.get('/procurement/:id', procurements.view);
 app.get('/procurement/:id/view', procurements.view);
 app.get('/procurement/:id/edit', procurements.edit);
+app.post('/procurement/:id/edit', procurements.saveEdit);
 
 var port = process.env.PORT || 3000;
 app.listen(port);
