@@ -23,6 +23,8 @@ var procurements = {
             }
     };
 
+exports.procurements = procurements;
+
 exports.index = function(req, res){
   res.render('procurements/index', { 
       title: title,
@@ -42,4 +44,9 @@ exports.edit = function(req, res){
       title: title,
       procurement: procurements[req.params.id]
   });
+};
+
+exports.saveEdit = function(req, res){
+  procurements[req.params.id].description = req.params.description;
+  res.render('procurements/saved', null);
 };
