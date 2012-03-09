@@ -59,11 +59,11 @@ describe('procurement-saveEdit', function(){
         procurement.saveEdit(req, res);
     });
 
-    it('should render the procurement saved page', function() {
-        expect(res.render.mostRecentCall.args[0]).toEqual('procurements/saved');
-    });
-
     it('should update the description of the correct procurement', function(){
         expect(procurement.procurements[100].description).toEqual(newDescription);
+    });
+    
+    it('should render the procurement saved page', function() {
+        expect(res.render.mostRecentCall.args[0]).toEqual('procurements/saved');
     });
 });

@@ -48,5 +48,7 @@ exports.edit = function(req, res){
 
 exports.saveEdit = function(req, res){
   procurements[req.params.id].description = req.params.description;
-  res.render('procurements/saved', null);
+  res.render('procurements/saved', {
+      title: 'Procurement saved.'
+  });
 };
