@@ -47,8 +47,21 @@ exports.edit = function(req, res){
 };
 
 exports.saveEdit = function(req, res){
-  procurements[req.params.id].description = req.params.description;
+  var proc = procurements[req.params.id];
+  proc.description = req.body.description;
+  proc.donation = req.body.donation;
+  proc.estimatedValue = req.body.estimatedValue;
+  proc.donor = req.body.donor;
+  proc.procurer = req.body.procurer;
+  proc.notes = req.body.notes;
+
   res.render('procurements/saved', {
-      title: 'Procurement saved.'
+      title: 'Procurement saved: New Donation ' + req.body.donation + '; Old Donation ' + proc.donation
   });
 };
+    //description: 'Night on the town plus hotel for 2.',
+    //donation: 'Night on the town!',
+    //estimatedValue: '$800.00',
+    //donor: 'Anita Schumacher',
+    //procurer: 'Anita',
+    //notes: 'Expires Sept 20th, 2012'
